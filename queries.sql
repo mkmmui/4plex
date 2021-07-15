@@ -13,3 +13,7 @@
 ## DROP TABLE job;
 
 ## Part 4: Test it with SQL
+
+## SELECT distinct skill.name,skill.description,job.name FROM job
+## job_skills on job.id= job_skills.jobs_id
+## skill on skill.id = job_skills.skills_id
