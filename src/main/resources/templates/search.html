@@ -27,7 +27,7 @@
         </p>
 
         <p>
-            <label for="searchTerm">Keyword:</label>
+            <label for="searchTerm">Search:</label>
             <input type="text" name="searchTerm" id="searchTerm" />
         </p>
 
@@ -41,16 +41,16 @@
         <tr th:each="job : ${jobs}">
             <td>
                 <p>
-                    Job Id:
+                    Menu Items Id:
                     <a th:href="@{'/view/' + ${job.id}}" th:text="${job.id}"></a>
                 </p>
-                <p th:text="${'Name: ' + job.name}"></p>
+                <p th:text="${'Type: ' + job.name}"></p>
                 <p>
-                    Employer:
+                    Flavor:
                     <a th:href="@{'/employers/view/' + ${job.employer.id}}" th:text="${job.employer.name}"></a>
                 </p>
                 <p>
-                    Skills:
+                    Price:
                     <ul th:each="skill : ${job.skills}">
                       <li>
                           <a th:href="@{'/skills/view/' + ${skill.id}}" th:text="${skill.name}"></a>
