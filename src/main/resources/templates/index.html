@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org/">
+<html xmlns:th="http://www.thymeleaf.org/" xmlns:sec="http://www.w3.org/1999/xhtml">
 <head th:replace="fragments :: head">
 </head>
 <body>
@@ -15,12 +15,12 @@
             <td>
                 <p th:text="${product.flavor + ' ' + product.name}"></p>
                 <p th:text="'$' + ${product.price}"></p>
-                <p><input type="checkbox" name="select" /> Add To Cart<br /></p>
+                <a th:href="@{'/shoppingCart/addProduct/{id}'(id=${product.id})}" class="col-md-1"
+                   sec:authorize="isAuthenticated()" th:if="${product.quantity}>0">
+                    <button type="button" class="btn btn-primary" th:text="Buy">Buy</button>
             </td>
         </tr>
     </table>
-
-    <input type="submit" class="btn btn-primary" value="View Cart" />
 
 </div>
 

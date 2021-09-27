@@ -53,10 +53,6 @@ public class AuthenticationController {
         return "register";
     }
 
-
-
-
-
     @PostMapping("/register")
     public String processRegistrationForm(@ModelAttribute @Valid RegisterFormDTO registerFormDTO,
                                           Errors errors, HttpServletRequest request, Model model)
@@ -85,10 +81,14 @@ public class AuthenticationController {
             model.addAttribute("title", "Register");
             return "register";
         }
+//
+//        User newUser = new User(registerFormDTO.getUsername(),
+//                registerFormDTO.getPassword(),
+//                registerFormDTO.getEmail());
 
-        User newUser = new User(registerFormDTO.getUsername(),
-                registerFormDTO.getPassword(),
-                registerFormDTO.getEmail());
+        User newUser = new User(registerFormDTO.getUsername(), registerFormDTO.getPassword());
+        userRepository.save(newUser);
+//        setUserInSession(request.getSession(), newUser);
 
         return "redirect:";
     }
