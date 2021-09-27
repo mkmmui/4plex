@@ -4,6 +4,7 @@ import org.launchcode.javawebdevtechjobspersistent.models.Job;
 import org.launchcode.javawebdevtechjobspersistent.models.Skill;
 import org.launchcode.javawebdevtechjobspersistent.models.data.EmployerRepository;
 import org.launchcode.javawebdevtechjobspersistent.models.data.JobRepository;
+import org.launchcode.javawebdevtechjobspersistent.models.data.ProductRepository;
 import org.launchcode.javawebdevtechjobspersistent.models.data.SkillRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -23,6 +24,9 @@ import java.util.Optional;
 public class HomeController {
 
     @Autowired
+    private ProductRepository productRepository;
+
+    @Autowired
     private EmployerRepository employerRepository;
 
     @Autowired
@@ -31,11 +35,24 @@ public class HomeController {
     @Autowired
     private SkillRepository skillRepository;
 
+//    @RequestMapping("")
+//    public String index(Model model) {
+//
+//        model.addAttribute("title", "My Jobs");
+//        model.addAttribute("jobs", jobRepository.findAll());
+//
+//        return "index";
+//    }
+
     @RequestMapping("")
     public String index(Model model) {
 
-        model.addAttribute("title", "My Jobs");
-        model.addAttribute("jobs", jobRepository.findAll());
+        model.addAttribute("title", "Menu");
+        model.addAttribute("products", productRepository.findAll());
+        model.addAttribute("flavors", productRepository.findAll());
+        model.addAttribute("name", productRepository.findAll());
+        model.addAttribute("price", productRepository.findAll());
+        model.addAttribute("quantity", productRepository.findAll());
 
         return "index";
     }

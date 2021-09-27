@@ -1,5 +1,6 @@
 package org.launchcode.javawebdevtechjobspersistent.models;
 
+import org.launchcode.javawebdevtechjobspersistent.models.impl.UserDetailsServiceImpl;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;

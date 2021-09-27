@@ -55,7 +55,7 @@ public class User extends AbstractEntity{
 
     @ManyToMany (cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinTable (
-            name = "users_roles",
+            name = "user_roles",
             joinColumns = @JoinColumn(name = "id"),
             inverseJoinColumns = @JoinColumn(name = "roles_id")
     )

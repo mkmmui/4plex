@@ -7,35 +7,15 @@
 <div th:replace="fragments :: page-header"></div>
 
 <div class="container body-content">
-<!--    <h2>Menu</h2>-->
-<!--    <ul>-->
-<!--        <li th:each="job : ${jobs}">-->
-<!--            <a th:href="@{'/view/' + ${job.id}}" th:text="${job.name}"></a>-->
-<!--        </li>-->
-<!--    </ul>-->
+
     <h1>MENU</h1>
 
-    <table class="job-listing">
-        <tr th:each="job : ${jobs}">
+    <table class="product-listing">
+        <tr th:each="product : ${products}">
             <td>
-<!--                <p>-->
-<!--                    Job Id:-->
-<!--                    <a th:href="@{'/view/' + ${job.id}}" th:text="${job.id}"></a>-->
-<!--                </p>-->
-                <p th:text="${job.name}"></p>
-                <p>
-                    <a th:text="${job.employer.name}"></a>
-                </p>
+                <p th:text="${product.flavor + ' ' + product.name}"></p>
+                <p th:text="'$' + ${product.price}"></p>
                 <p><input type="checkbox" name="select" /> Add To Cart<br /></p>
-<!--                <p>-->
-<!--                    Skills:-->
-<!--                <ul th:each="skill : ${job.skills}">-->
-<!--                    <li>-->
-<!--                        <a th:href="@{'/skills/view/' + ${skill.id}}" th:text="${skill.name}"></a>-->
-<!--                    </li>-->
-<!--                </ul>-->
-<!--                </p>-->
-
             </td>
         </tr>
     </table>

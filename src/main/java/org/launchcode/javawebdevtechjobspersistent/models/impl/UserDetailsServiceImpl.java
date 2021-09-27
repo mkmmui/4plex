@@ -1,5 +1,7 @@
-package org.launchcode.javawebdevtechjobspersistent.models;
+package org.launchcode.javawebdevtechjobspersistent.models.impl;
 
+import org.launchcode.javawebdevtechjobspersistent.models.MyUserDetails;
+import org.launchcode.javawebdevtechjobspersistent.models.User;
 import org.launchcode.javawebdevtechjobspersistent.models.data.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
